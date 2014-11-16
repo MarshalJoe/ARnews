@@ -1,17 +1,12 @@
 <section data-ng-controller="PostsController" data-ng-init="find()">
-    <div class="page-header">
-        <h1>Posts</h1>
-    </div>
-    <div class="list-group">
-        <div data-ng-repeat="post in posts" class="list-group-item">
-			<a href="{{post.link}}"><h4 class="list-group-item-heading" data-ng-bind="post.title"></h4></a>
-            <small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="post.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="post.user.displayName"></span> |
-                <a data-ng-href="#!/posts/{{post._id}}">View</a>
-        </div>
+    <div data-ng-repeat="post in posts">
+		<a href="{{post.link}}"><h4 data-ng-bind="post.title"></h4></a>
+        <small class="list-group-item-text">
+			posted on
+			<span data-ng-bind="post.created | date:'medium'"></span>
+			by
+			<span data-ng-bind="post.user.displayName"></span> |
+            <a data-ng-href="#!/posts/{{post._id}}">View</a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!posts.$resolved || posts.length">
     	No Posts yet, why don't you <a href="/#!/posts/create">create one</a>?
