@@ -9,7 +9,8 @@ angular.module('posts').controller('PostsController', ['$scope', '$stateParams',
 		$scope.create = function() {
 			// Create new Post object
 			var post = new Posts ({
-				name: this.name
+				title: this.title,
+				link: this.link
 			});
 
 			// Redirect after save
