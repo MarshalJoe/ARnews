@@ -30,6 +30,10 @@ a.title {
 	color:black;
 }
 
+a.title:hover {
+	text-decoration: none;
+}
+
 body {
 	background-color:white;
 }
