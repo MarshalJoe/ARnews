@@ -13,3 +13,9 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+.maintitle {
+	color:gray;
+	font-size: 3em;
+	padding: 15px;
+}
