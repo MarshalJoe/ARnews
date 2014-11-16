@@ -1,8 +1,9 @@
 <section data-ng-controller="PostsController" data-ng-init="find()">
     <div data-ng-repeat="post in posts">
-		<a href="{{post.link}}"><h4 data-ng-bind="post.title"></h4></a>
+		<a class="title" href="{{post.link}}"><h4 data-ng-bind="post.title"></h4></a>
         <small class="list-group-item-text">
-			posted on
+			<span class="rating">{{post.rating}} points</span>
+            posted on
 			<span data-ng-bind="post.created | date:'medium'"></span>
 			by
 			<span data-ng-bind="post.user.displayName"></span> |

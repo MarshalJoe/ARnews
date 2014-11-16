@@ -14,8 +14,18 @@
 	border-color: #78FA89;
 }
 
+/*begin my custom stuff*/
+
 .maintitle {
 	color:gray;
 	font-size: 3em;
 	padding: 15px;
+}
+
+.rating {
+	color: blue;
+}
+
+a.title {
+	color:black;
 }

@@ -22,6 +22,10 @@ var PostSchema = new Schema({
 		required: 'Please fill Post link',
 		trim: true
 	},
+	rating: {
+		type: Number,
+		default: 0
+	},
 	created: {
 		type: Date,
 		default: Date.now
@@ -31,5 +35,10 @@ var PostSchema = new Schema({
 		ref: 'User'
 	}
 });
+
+PostSchema.methods.upvote = function(cb) {
+	this.upvotes += 1;
+	this.save(cb);
+};
 
 mongoose.model('Post', PostSchema);
