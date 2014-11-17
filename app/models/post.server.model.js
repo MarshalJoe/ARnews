@@ -26,6 +26,10 @@ var PostSchema = new Schema({
 		type: Number,
 		default: 0
 	},
+	comments: {
+		type: Schema.ObjectId,
+		ref: 'Comment'
+	},
 	created: {
 		type: Date,
 		default: Date.now

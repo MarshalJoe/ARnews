@@ -18,4 +18,9 @@
 			<span data-ng-bind="post.user.displayName"></span>
 		</em>
 	</small>
+
+	<div data-ng-repeat="comment in post.comments">
+		<p>{{comment.name}}</p>
+	</div>
+
 </section>

@@ -7,7 +7,9 @@
 			<span data-ng-bind="post.created | date:'medium'"></span>
 			by
 			<span data-ng-bind="post.user.displayName"></span> |
-            <a data-ng-href="#!/posts/{{post._id}}">View</a>
+            <a data-ng-href="#!/posts/{{post._id}}">View</a> |
+            <a data-ng-href="#!/posts/{{post._id}}/comments/create">Add new comment</a>
+            <p>post id: {{post._id}}</p>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!posts.$resolved || posts.length">
     	No Posts yet, why don't you <a href="/#!/posts/create">create one</a>?
