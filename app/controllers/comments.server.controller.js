@@ -12,21 +12,21 @@ var mongoose = require('mongoose'),
  * Create a Comment
  */
 exports.create = function(req, res, next) {
-	console.log('User is ' + req.user);
-	console.log('Post is ' + req.post);
+	//console.log('User is ' + req.user);
+	//console.log('Post is ' + req.post.name);
 	var comment = new Comment(req.body);
 	comment.user = req.user;
-	comment.post = req.post;
+	//comment.post = req.post;
 
 	  comment.save(function(err, comment){
 	    if(err){ return next(err); }
 
-	    req.post.comments.push(comment);
-	    req.post.save(function(err, post) {
-	      if(err){ return next(err); }
+	    // req.post.comments.push(comment);
+	    // req.post.save(function(err, post) {
+	    //   if(err){ return next(err); }
 
 	      res.jsonp(comment);
-	    });
+	    // });
 	  });
 };
 

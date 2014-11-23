@@ -5,7 +5,7 @@ module.exports = function(app) {
 	var comments = require('../../app/controllers/comments.server.controller');
 
 	// Comments Routes
-	app.route('/posts/:post/comments')
+	app.route('/comments')
 		.get(comments.list)
 		.post(users.requiresLogin, comments.create);
 

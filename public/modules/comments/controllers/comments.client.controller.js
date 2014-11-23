@@ -13,22 +13,21 @@ angular.module('comments').controller('CommentsController', ['$scope', '$statePa
 			// Create new Comment object
 			var comment = new Comments ({
 				name: this.name,
-				user: 'Joe',
 			});
 			// associate with post
-			console.log('comment' + comment._id + comment.name);
+			console.log('comment' + comment.name + 'saved successfully');
 
-			console.log('comment saved sucessfully');
 			// Redirect after save
-			// comment.$save(function(response) {
-			// 	console.log('success');
-			// 	// $location.path('comments/' + response._id);
+			comment.$save(function(response) {
+				console.log('success');
+				console.log(response);
+			  $location.path('/comments');
 
-			// 	// Clear form fields
-			// 	$scope.name = '';
-			// }, function(errorResponse) {
-			// 	$scope.error = errorResponse.data.message;
-			// });
+				// Clear form fields
+				$scope.name = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
 		};
 
 		// Remove existing Comment
